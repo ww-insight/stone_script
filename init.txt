@@ -23,7 +23,8 @@
         equip mask
         activate R 
       loadout 2
-      ?item.CanActivate() & foe.distance <= 10
+      ?item.CanActivate() 
+      ^& foe.distance <= 10
         activate R
   :
     ?foe.count >= 6
