@@ -1,3 +1,4 @@
+>test
 ?summon.count = 0
   equipL talisman
   activate L
