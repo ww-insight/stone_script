@@ -1,25 +1,26 @@
 ? foe.name = "Dysangelos Perfected" 
-? foe.armor > 0
-    equipR 
-:
-    equipR 
-? foe.name = "Dysangelos, Bearer of Stones" 
-    ? foe.debuffs.count = 0
-    equipL poison wand
+    ? foe.armor > 0
+        equipR crossbow
     :
-    equipL crossbow
-:
-? foe = vigor
-    equipL poison wand
-:
-    ? foe = aether
-    equipL vigor wand
-    :
-    ? foe = fire
-        equipL aether wand
-    :
-        ? foe = poison
-        equipL ice wand
+        equipR crossbow
+:        
+    ? foe.name = "Dysangelos, Bearer of Stones" 
+        ? foe.debuffs.count = 0
+            equipL poison wand
         :
-        ? foe = ice
-            equipL fire wand
+            equipL crossbow
+    :
+        ? foe = vigor
+            equipL poison wand
+        :
+            ? foe = aether
+                equipL vigor wand
+            :
+                ? foe = fire
+                    equipL aether wand
+                :
+                    ? foe = poison
+                        equipL ice wand
+                    :
+                        ? foe = ice
+                            equipL fire wand
