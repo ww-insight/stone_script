@@ -1,7 +1,6 @@
 ?summon.count = 0
   equipL talisman
-  ?item.CanActivate()
-    activate L
+  activate L
 :
   ?summon.GetId() = cinderwisp & summon.GetVar("ignition") >= 10
     activate cinderwisp
