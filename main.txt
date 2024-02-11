@@ -1,1 +1,1 @@
-import location/abcd
+import location/rocky
