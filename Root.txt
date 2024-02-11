@@ -1,14 +1,3 @@
-// When powered on, the Mind Stone continuously
-// executes instructions given to it.
-// Instructions must be scribed in Stonescript.
-// Learn more at:
-// StoneStoryRPG.com/stonescript
-// -Bezerra, the Sage
-//?pickup.distance < 10
-//  loadout 5
-//:
-//?loc.loop
-//  loadout 3
 ?foe.distance > 25
   ?pickup.distance < 10
     loadout 5
