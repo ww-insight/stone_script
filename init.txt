@@ -17,7 +17,7 @@
 :
   ?foe = boss
     ? loc = rocky
-      >testinit
+      import location/rocky
     :
       ?item.GetCooldown(＂mask＂) <= 0
         equip mask
