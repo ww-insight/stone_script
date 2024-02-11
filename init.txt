@@ -17,7 +17,7 @@
 :
   ?foe = boss
     ? loc = rocky
-      import location/abcd
+      >importlocation/abcd
     :
       ?item.GetCooldown(＂mask＂) <= 0
         equip mask
