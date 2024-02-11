@@ -1,0 +1,33 @@
+// When powered on, the Mind Stone continuously
+// executes instructions given to it.
+// Instructions must be scribed in Stonescript.
+// Learn more at:
+// StoneStoryRPG.com/stonescript
+// -Bezerra, the Sage
+//?pickup.distance < 10
+//  loadout 5
+//:
+//?loc.loop
+//  loadout 3
+?foe.distance > 25
+  ?pickup.distance < 10
+    loadout 5
+  :
+    loadout 6
+:
+  ?foe = boss
+    ? loc = rocky
+      import location/rocky
+    :
+      ?item.GetCooldown(＂mask＂) <= 0
+        equip mask
+        activate R 
+      loadout 2
+      ?item.CanActivate() & foe.distance <= 10
+        activate R
+  :
+    ?foe.count >= 6
+    ^& item.GetCooldown(＂blade＂) <= 0
+      equip blade
+      activate R 
+    loadout 1
