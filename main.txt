@@ -3,7 +3,7 @@
 // Instructions must be scribed in Stonescript.
 // Learn more at:
 // StoneStoryRPG.com/stonescript
-
+>test
 ?foe.distance > 25
   ?pickup.distance < 10
     loadout 5
@@ -12,7 +12,7 @@
 :
   ?foe = boss
     ? loc = rocky
-      import rocky
+      //import rocky
     :
       ?item.GetCooldown(＂mask＂) <= 0
         equip mask
