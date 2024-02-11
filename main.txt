@@ -1,11 +1,1 @@
-// When powered on, the Mind Stone continuously
-// executes instructions given to it.
-// Instructions must be scribed in Stonescript.
-// Learn more at:
-// StoneStoryRPG.com/stonescript
->test
-?foe.distance > 25
-  ?pickup.distance < 10
-    loadout 5
-  :
-    loadout 6
+loadout 5
