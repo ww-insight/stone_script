@@ -3,6 +3,7 @@
 // Instructions must be scribed in Stonescript.
 // Learn more at:
 // StoneStoryRPG.com/stonescript
+import summons
 
 ?foe.distance > 25
   ?pickup.distance < 10
