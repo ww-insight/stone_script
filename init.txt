@@ -9,6 +9,7 @@
 //:
 //?loc.loop
 //  loadout 3
+import summon/cinderwisp
 ?foe.distance > 25
   ?pickup.distance < 10
     loadout 5
