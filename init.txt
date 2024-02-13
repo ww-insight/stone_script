@@ -9,27 +9,36 @@
 //:
 //?loc.loop
 //  loadout 3
-import summon/cinderwisp
-?foe.distance > 25
-  ?pickup.distance < 10
-    loadout 5
-  :
-    loadout 6
+
+?summon.count = 0
+  equipL talisman
+  ?item.CanActivate(＂fire_talisman＂)
+    activate L
 :
-  ?foe = boss
-    ? loc = rocky
-      import location/rocky
-    :
-      ?item.GetCooldown(＂mask＂) <= 0
-        equip mask
-        activate R 
-      loadout 2
-      ?item.CanActivate() 
-      ^& foe.distance <= 10
-        activate R
+  ?summon.GetId() = cinderwisp 
+  ^& summon.GetVar(＂ignition＂) >= 10
+    activate cinderwisp
   :
-    ?foe.count >= 6
-    ^& item.GetCooldown(＂blade＂) <= 0
-      equip blade
-      activate R 
-    loadout 1
+    ?foe.distance > 25
+      ?pickup.distance < 10
+        loadout 5
+      :
+        loadout 6
+    :
+      ?foe = boss
+        ? loc = rocky
+          import location/rocky
+        :
+          ?item.GetCooldown(＂mask＂) <= 0
+            equip mask
+            activate R 
+          loadout 2
+          ?item.CanActivate() 
+          ^& foe.distance <= 10
+            activate R
+      :
+        ?foe.count >= 6
+        ^& item.GetCooldown(＂blade＂) <= 0
+          equip blade
+          activate R 
+        loadout 1
