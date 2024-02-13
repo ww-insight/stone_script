@@ -1,4 +1,13 @@
-import summon/cinderwisp
+
+?summon.count = 0
+  equipL talisman
+  ?item.CanActivate(＂fire_talisman＂)
+    activate L
+:
+  ?summon.GetId() = cinderwisp 
+  ^& summon.GetVar(＂ignition＂) >= 10
+    activate cinderwisp
+
 ?foe.distance > 25
   ?pickup.distance < 10
     loadout 5
