@@ -1,41 +1,34 @@
-// When powered on, the Mind Stone continuously
-// executes instructions given to it.
-// Instructions must be scribed in Stonescript.
-// Learn more at:
-// StoneStoryRPG.com/stonescript
-
-func main_f(use_talisman, use_blade, use_mask)
-  ?summon.count = 0 & use_talisman
-    equipL talisman
-    ?item.CanActivate(＂fire_talisman＂)
-      activate L
+?summon.count = 0 & use_talisman
+  equipL talisman
+  ?item.CanActivate(＂fire_talisman＂)
+    activate L
+:
+  ?summon.GetId() = cinderwisp 
+  ^& summon.GetVar(＂ignition＂) >= 10
+    activate cinderwisp
   :
-    ?summon.GetId() = cinderwisp 
-    ^& summon.GetVar(＂ignition＂) >= 10
-      activate cinderwisp
-    :
-      ?foe.distance > 25
-        ?pickup.distance < 10
-          loadout 5
-        :
-          loadout 6
+    ?foe.distance > 25
+      ?pickup.distance < 10
+        loadout 5
       :
-        ?foe = boss
-          ? loc = rocky
-            import location/rocky
-          :
-            ?item.GetCooldown(＂mask＂) <= 0
-            ^& use_mask
-              equip mask
-              activate R 
-            loadout 2
-            ?item.CanActivate() 
-            ^& foe.distance <= 10
-              activate R
+        loadout 6
+    :
+      ?foe = boss
+        ? loc = rocky
+          import location/rocky
         :
-          ?foe.count >= 6
-          ^& item.GetCooldown(＂blade＂) <= 0
-          ^& use_blade
-            equip blade
+          ?item.GetCooldown(＂mask＂) <= 0
+          ^& use_mask
+            equip mask
             activate R 
-          loadout 1
+          loadout 2
+          ?item.CanActivate() 
+          ^& foe.distance <= 10
+            activate R
+      :
+        ?foe.count >= 6
+        ^& item.GetCooldown(＂blade＂) <= 0
+        ^& use_blade
+          equip blade
+          activate R 
+        loadout 1
