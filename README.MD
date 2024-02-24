@@ -18,4 +18,4 @@ var use_mask = false
 
 // Run Main
 import main
-Main(use_talisman, use_blade, use_mask)
+main_f(use_talisman, use_blade, use_mask)

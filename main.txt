@@ -1,4 +1,4 @@
-func Main(use_talisman, use_blade, use_mask)
+func main_f(use_talisman, use_blade, use_mask)
   ?summon.count = 0 & use_talisman
     equipL talisman
     ?item.CanActivate(＂fire_talisman＂)
